@@ -98,10 +98,9 @@
             stroke-linecap: round;
         }
         
-        /* PROJECT COLOR TAGS */
-        /* Note: Tags still alternate for contrast: Yellow tags on Pink cards, Pink tags on other cards. */
-        .project-tag-pink { @apply bg-pink-200 text-pink-700 font-semibold px-3 py-1 rounded-full text-sm; }
-        .project-tag-yellow { @apply bg-yellow-200 text-yellow-700 font-semibold px-3 py-1 rounded-full text-sm; }
+        /* PROJECT COLOR TAGS - NEW BOLD BUTTON STYLE */
+        .project-tag-pink { @apply bg-pink-200 text-pink-700 font-bold px-4 py-1.5 rounded-xl text-sm border-2 border-pink-400; }
+        .project-tag-yellow { @apply bg-yellow-200 text-yellow-700 font-bold px-4 py-1.5 rounded-xl text-sm border-2 border-yellow-400 ring-2 ring-yellow-500; }
 
         /* Structural accent for the inner box borders */
         .inner-box-border { @apply border-2 border-gray-800 rounded-lg; }
@@ -238,13 +237,13 @@
                 
                 <!-- Skill Card 1: Programming & ML --><div class="bg-white illustrated-card p-6 md:p-8 border-pink-500">
                     <div class="flex items-center space-x-3 mb-4 border-b-2 pb-2 border-pink-500">
-                        <!-- Doodle: Neural Network/Brain (Pink Accent) --><svg class="w-10 h-10" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="15" cy="10" r="4" fill="#f472b6"/>
-                            <circle cx="15" cy="40" r="4" fill="#f472b6"/>
-                            <circle cx="35" cy="25" r="4" fill="#f472b6"/>
-                            <line x1="15" y1="10" x2="35" y2="25" class="doodle-stroke" stroke="#f472b6"/>
-                            <line x1="15" y1="40" x2="35" y2="25" class="doodle-stroke" stroke="#f472b6"/>
-                            <text x="5" y="5" font-size="8" class="handwritten" fill="#f472b6">ML</text>
+                        <!-- Doodle: Neural Network/Brain (YELLOW Accent) --><svg class="w-10 h-10" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="15" cy="10" r="4" fill="#fef08a" stroke="#374151" stroke-width="1.5"/>
+                            <circle cx="15" cy="40" r="4" fill="#fef08a" stroke="#374151" stroke-width="1.5"/>
+                            <circle cx="35" cy="25" r="4" fill="#fef08a" stroke="#374151" stroke-width="1.5"/>
+                            <line x1="15" y1="10" x2="35" y2="25" class="doodle-stroke" stroke="#374151" stroke-width="2"/>
+                            <line x1="15" y1="40" x2="35" y2="25" class="doodle-stroke" stroke="#374151" stroke-width="2"/>
+                            <text x="5" y="5" font-size="8" class="handwritten" fill="#374151">ML</text>
                         </svg>
                         <h3 class="text-2xl font-bold quirky-header main-accent">ML Core</h3>
                     </div>
@@ -257,11 +256,12 @@
 
                 <!-- Skill Card 2: Visualization & Frameworks --><div class="bg-white illustrated-card p-6 md:p-8 border-pink-500">
                     <div class="flex items-center space-x-3 mb-4 border-b-2 pb-2 border-pink-500">
-                        <!-- Doodle: Bar Chart/Graph (Pink Accent) --><svg class="w-10 h-10" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
-                            <line x1="5" y1="45" x2="45" y2="45" class="doodle-stroke" stroke="#f472b6"/>
-                            <rect x="10" y="25" width="8" height="20" fill="#fce7f6"/> <!-- Light Pink Fill --><rect x="25" y="15" width="8" height="30" fill="#fce7f6"/>
-                            <rect x="40" y="35" width="8" height="10" fill="#fce7f6"/>
-                            <text x="10" y="10" font-size="8" class="handwritten" fill="#f472b6">CHART</text>
+                        <!-- Doodle: Bar Chart/Graph (YELLOW Accent) --><svg class="w-10 h-10" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="5" y1="45" x2="45" y2="45" class="doodle-stroke" stroke="#374151"/>
+                            <rect x="10" y="25" width="8" height="20" fill="#fef08a" stroke="#374151" stroke-width="1.5"/> 
+                            <rect x="25" y="15" width="8" height="30" fill="#fef08a" stroke="#374151" stroke-width="1.5"/>
+                            <rect x="40" y="35" width="8" height="10" fill="#fef08a" stroke="#374151" stroke-width="1.5"/>
+                            <text x="10" y="10" font-size="8" class="handwritten" fill="#374151">CHART</text>
                         </svg>
                         <h3 class="text-2xl font-bold quirky-header main-accent">Data & Viz</h3>
                     </div>
@@ -274,10 +274,10 @@
 
                 <!-- Skill Card 3: Web & Design --><div class="bg-white illustrated-card p-6 md:p-8 border-pink-500">
                     <div class="flex items-center space-x-3 mb-4 border-b-2 pb-2 border-pink-500">
-                        <!-- Doodle: Code Bracket/Figma (Pink Accent) --><svg class="w-10 h-10" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
-                            <polyline points="10 10 5 25 10 40" class="doodle-stroke" stroke="#f472b6" stroke-width="3"/>
-                            <polyline points="40 10 45 25 40 40" class="doodle-stroke" stroke="#f472b6" stroke-width="3"/>
-                            <circle cx="25" cy="25" r="10" fill="#f472b6" stroke="#f472b6" stroke-width="3"/> <!-- Pink Fill --><text x="15" y="10" font-size="8" class="handwritten" fill="#f472b6">FIGMA</text>
+                        <!-- Doodle: Code Bracket/Figma (YELLOW Accent) --><svg class="w-10 h-10" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="10 10 5 25 10 40" class="doodle-stroke" stroke="#374151" stroke-width="3"/>
+                            <polyline points="40 10 45 25 40 40" class="doodle-stroke" stroke="#374151" stroke-width="3"/>
+                            <circle cx="25" cy="25" r="10" fill="#fef08a" stroke="#374151" stroke-width="3"/> <!-- Yellow Fill --><text x="15" y="10" font-size="8" class="handwritten" fill="#374151">FIGMA</text>
                         </svg>
                         <h3 class="text-2xl font-bold quirky-header main-accent">Web & Design</h3>
                     </div>
@@ -311,7 +311,7 @@
                             Built a **collaborative filtering** recommendation system that predicts user ratings and suggests movies. This involved extensive **data preprocessing** and **similarity calculations** using core Python libraries, leading to visually evaluated results.
                         </p>
                         <div class="mt-4 space-x-2">
-                            <!-- YELLOW TAGS --><span class="project-tag-yellow">Python</span>
+                            <!-- YELLOW TAGS (NEW BOLD BUTTON STYLE) --><span class="project-tag-yellow">Python</span>
                             <span class="project-tag-yellow">Scikit-learn</span>
                             <span class="project-tag-yellow">Collaborative Filtering</span>
                         </div>
@@ -322,7 +322,7 @@
                     <div class="flex-shrink-0 w-full md:w-1/3 p-4 bg-pink-50 rounded-lg border-2 border-pink-300">
                         <h3 class="text-3xl font-bold mb-2 text-pink-600 quirky-header">Population Trends</h3>
                         <p class="text-xs text-gray-500 mb-4">EXPLORATORY DATA ANALYSIS</p>
-                        <!-- Doodle Icon: Globe/World (Dark Gray/Yellow) --><svg class="w-20 h-20 text-yellow-500 mx-auto" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Doodle Icon: Globe/World (YELLOW) --><svg class="w-20 h-20 text-yellow-500 mx-auto" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="10" class="doodle-stroke" stroke="#374151" stroke-width="2" fill="#fef08a"/>
                             <path d="M12 2a15 15 0 010 20" class="doodle-stroke" stroke="#374151" stroke-width="2"/>
                             <path d="M2.5 12h19" class="doodle-stroke" stroke="#374151" stroke-width="2"/>
@@ -333,7 +333,7 @@
                             Executed a comprehensive **Exploratory Data Analysis (EDA)** to study global population trends and demographic patterns. Key findings were visually represented using **Matplotlib and Seaborn**, effectively highlighting regional growth and future projections.
                         </p>
                         <div class="mt-4 space-x-2">
-                             <!-- PINK TAGS --><span class="project-tag-pink">EDA</span>
+                             <!-- PINK TAGS (NEW BOLD BUTTON STYLE) --><span class="project-tag-pink">EDA</span>
                             <span class="project-tag-pink">Matplotlib/Seaborn</span>
                             <span class="project-tag-pink">Statistics</span>
                         </div>
@@ -356,7 +356,7 @@
                             Conducted time series analysis to identify stock trends and forecast future prices. Implemented **moving averages, trend lines, and pattern analysis** using Python, Pandas, and NumPy for robust, data-backed market insights.
                         </p>
                         <div class="mt-4 space-x-2">
-                            <!-- YELLOW TAGS --><span class="project-tag-yellow">Time Series</span>
+                            <!-- YELLOW TAGS (NEW BOLD BUTTON STYLE) --><span class="project-tag-yellow">Time Series</span>
                             <span class="project-tag-yellow">Pandas/NumPy</span>
                             <span class="project-tag-yellow">Forecasting</span>
                         </div>
@@ -372,24 +372,24 @@
             </h2>
             <div class="grid md:grid-cols-2 gap-8">
                 
-                <!-- Education (Structural Gray/Pink Shadow Only) --><div class="bg-white illustrated-card p-8 border-gray-500">
-                    <h3 class="text-3xl font-bold mb-4 border-b-4 pb-2 border-gray-500 quirky-header structural-accent">Education</h3>
+                <!-- Education (Structural Pink Border/Pink Heading) --><div class="bg-white illustrated-card p-8 border-pink-500">
+                    <h3 class="text-3xl font-bold mb-4 border-b-4 pb-2 border-pink-500 quirky-header main-accent">Education</h3>
                     <div class="space-y-6">
-                        <!-- Removed yellow background on inner cards --><div class="p-4 bg-white rounded-lg border border-gray-300"> 
+                        <!-- Integrated MSc (Light Yellow Background) --><div class="p-4 bg-yellow-50 rounded-lg border border-gray-300"> 
                             <p class="font-bold text-xl">Integrated MSc Computer Science</p>
                             <p class="text-sm text-gray-700 italic">Gujarat University | Aug 2023 - July 2028</p>
                         </div>
-                        <div class="p-4 bg-white rounded-lg border border-gray-300">
+                        <!-- Higher Secondary School (Light Yellow Background) --><div class="p-4 bg-yellow-50 rounded-lg border border-gray-300">
                             <p class="font-bold text-xl">Higher Secondary School Certificate</p>
                             <p class="text-sm text-gray-700 italic">Airport School Ahmedabad | 90.4%</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Experience (Structural Gray/Pink Shadow Only) --><div class="bg-white illustrated-card p-8 border-gray-500">
-                    <h3 class="text-3xl font-bold mb-4 border-b-4 pb-2 border-gray-500 quirky-header structural-accent">Experience</h3>
+                <!-- Experience (Structural Pink Border/Pink Heading) --><div class="bg-white illustrated-card p-8 border-pink-500">
+                    <h3 class="text-3xl font-bold mb-4 border-b-4 pb-2 border-pink-500 quirky-header main-accent">Experience</h3>
                     <div class="space-y-6">
-                        <!-- Removed yellow background on inner cards --><div class="p-4 bg-white rounded-lg border border-gray-300">
+                        <!-- Content and Digital Media Intern (Light Yellow Background) --><div class="p-4 bg-yellow-50 rounded-lg border border-gray-300">
                             <p class="font-bold text-xl">Content and Digital Media Intern</p>
                             <p class="text-sm text-gray-700 italic mb-2">Gujarat Student Startup and Innovation hub (i-Hub) | Oct 2024 - Dec 2024</p>
                             <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
