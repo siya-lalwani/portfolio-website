@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Siya Lalwani | Creative Data Portfolio</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Quirkier Font (e.g., Permanent Marker or something similar for the handwritten effect) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Bebas+Neue&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Quirkier Font (e.g., Permanent Marker or something similar for the handwritten effect) --><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Bebas+Neue&family=Permanent+Marker&display=swap" rel="stylesheet">
     <style>
         /* Custom styles to enhance the "illustrated" and "quirky" feel */
         body {
@@ -29,13 +27,13 @@
             line-height: 1;
         }
 
-        /* Custom utility for a "friendly" card look with an outline and shadow */
+        /* Custom utility for a "friendly" card look with an outline and strong black stroke */
         .illustrated-card {
             transition: all 0.3s ease;
-            /* Softer shadow color */
+            /* Softer shadow color (Light Pink - USED FOR ALL CARDS NOW) */
             box-shadow: 0 8px 0 0 #fbcfe8; 
-            /* Soft Pink/Berry outline */
-            border: 3px solid #f472b6; 
+            /* Strong Black border for structural pop */
+            border: 3px solid #374151; 
             border-radius: 1.5rem; /* Large rounded corners */
         }
         .illustrated-card:hover {
@@ -43,10 +41,15 @@
             /* Softer hover shadow */
             box-shadow: 0 12px 0 0 #fbcfe8; 
         }
-
+        
         /* New: Lighter Pink/Berry Accent */
         .main-accent {
             color: #f472b6; /* Pink-400 */
+        }
+        
+        /* Structural Accent (Dark Gray) */
+        .structural-accent {
+            color: #374151; /* Gray-700 for professionalism */
         }
 
         /* Doodle Animation (Quick, short animation) */
@@ -59,32 +62,49 @@
             animation: float 4s ease-in-out infinite;
         }
 
-        /* --- Custom Doodle Styles (Adhering to Pink and Violet) --- */
+        /* --- Custom Doodle Styles (Adhering to Pink, Light Yellow, and Dark Gray) --- */
         .doodle-stroke {
-            stroke: #8b5cf6; /* Soft Violet for structural contrast (Violet-500) */
+            stroke: #374151; /* Dark Gray for lines */
             stroke-width: 3px;
             fill: none;
             stroke-linecap: round;
             stroke-linejoin: round;
         }
-        .doodle-fill {
-            fill: #fbcfe8; /* Light Pink for fills */
-            opacity: 0.5;
+        .doodle-fill-primary {
+            fill: #f472b6; /* Main Pink for fills */
         }
-        .doodle-accent-fill {
-            fill: #f472b6; /* Main Accent Pink for dots */
-            stroke: none;
+        /* YELLOW is now reserved almost exclusively for small visual highlights */
+        .doodle-fill-secondary {
+            fill: #fef08a; /* Light Yellow for secondary fills */
         }
-        .doodle-primary {
-            stroke: #8b5cf6; /* Soft Violet */
-            fill: none;
-            stroke-width: 3;
-        }
-        .doodle-secondary {
-            stroke: #fbcfe8;
-            fill: none;
+        .doodle-line-accent {
+            stroke: #f472b6; /* Pink line accent */
             stroke-width: 2;
         }
+        /* Custom styles for the Anatomy Layout */
+        .anatomy-point {
+            @apply flex items-start gap-4 text-left;
+        }
+        .anatomy-number {
+            @apply text-4xl font-extrabold main-accent mt-1;
+        }
+        .anatomy-text {
+            @apply text-gray-700 text-lg;
+        }
+        .arrow-path {
+            stroke: #f472b6;
+            stroke-width: 4;
+            fill: none;
+            stroke-linecap: round;
+        }
+        
+        /* PROJECT COLOR TAGS */
+        /* Note: Tags still alternate for contrast: Yellow tags on Pink cards, Pink tags on other cards. */
+        .project-tag-pink { @apply bg-pink-200 text-pink-700 font-semibold px-3 py-1 rounded-full text-sm; }
+        .project-tag-yellow { @apply bg-yellow-200 text-yellow-700 font-semibold px-3 py-1 rounded-full text-sm; }
+
+        /* Structural accent for the inner box borders */
+        .inner-box-border { @apply border-2 border-gray-800 rounded-lg; }
     </style>
 </head>
 
@@ -92,10 +112,9 @@
 
     <div class="container mx-auto p-4 md:p-8 max-w-7xl">
 
-        <!-- Header / Navigation -->
-        <header class="flex justify-between items-center py-6 sticky top-0 z-10 bg-[#fffefc] border-b border-gray-100">
-            <a href="#" class="text-4xl font-extrabold main-accent quirky-header">
-                SIYA <span class="text-gray-500">LALWANI</span>
+        <!-- Header / Navigation --><header class="flex justify-between items-center py-6 sticky top-0 z-10 bg-[#fffefc] border-b border-gray-100">
+            <a href="#" class="text-4xl font-extrabold structural-accent quirky-header">
+                SIYA <span class="main-accent">LALWANI</span>
             </a>
             <nav class="space-x-4 text-lg font-medium hidden sm:block">
                 <a href="#projects" class="hover:text-pink-500 transition duration-300">Projects</a>
@@ -104,67 +123,130 @@
             </nav>
         </header>
 
-        <!-- Hero Section (Quirky, Overlaid, Ad Style) -->
-        <section id="hero" class="relative mt-8 p-8 md:p-12 overflow-hidden">
-            <div class="flex flex-col md:flex-row items-center gap-8">
+        <!-- NEW HERO SECTION (Anatomy of the Brand Style) --><section id="hero" class="relative mt-8 py-12 md:py-16 overflow-hidden">
+            
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center structural-accent quirky-header mb-12">
+                <span class="main-accent handwritten text-5xl">Anatomy</span> of the Data Storyteller
+            </h2>
+            
+            <!-- Grid for 3-Point Layout --><div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 items-start">
                 
-                <!-- Doodle Illustration (with floating animation) -->
-                <div class="relative flex-shrink-0 w-full md:w-1/2 flex justify-center order-2 md:order-1">
-                    <div class="doodle-float w-64 h-64 md:w-80 md:h-80">
-                         <!-- Placeholder for Image/Photo with a quirky outline/background -->
-                        <div class="absolute inset-0 bg-pink-300 rounded-full transform rotate-3 scale-105 opacity-50 -z-10"></div>
-                        <img 
-                            src="https://placehold.co/300x300/fbcfe8/be185d?text=Photo+of+Siya" 
-                            alt="Siya Lalwani - Data Enthusiast" 
-                            class="w-full h-full object-cover rounded-full illustrated-card border-4 border-white transform -rotate-2"
-                            onerror="this.onerror=null;this.src='https://placehold.co/300x300/fbcfe8/be185d?text=Photo+of+Siya';"
-                        >
-                        <!-- Floating Doodles on top of image (using new accent color) -->
-                        <svg class="absolute top-0 right-0 w-20 h-20 transform translate-x-1/2 -translate-y-1/2" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="25" cy="25" r="20" class="doodle-stroke" stroke="#f472b6" stroke-width="4"/>
-                            <text x="25" y="30" text-anchor="middle" font-size="16" class="handwritten" fill="#f472b6">ML</text>
-                        </svg>
+                <!-- Point 1 (Top Left) --><div class="md:text-right">
+                    <div class="anatomy-point justify-end md:justify-start">
+                        <div class="md:order-2">
+                            <span class="anatomy-number">01.</span>
+                        </div>
+                        <div class="anatomy-text md:order-1">
+                            <p class="font-semibold text-gray-900">The Code Whisperer</p>
+                            <p class="text-sm">I don't just write code—I channel the raw power of Python and ML models to turn abstract data into **predictable magic**.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Text Content (Handwritten/Bold Style) -->
-                <div class="flex-grow order-1 md:order-2">
-                    <span class="text-3xl text-gray-700 block mb-2 handwritten">Hi! Since you're here,</span>
-                    <h2 class="text-6xl md:text-8xl font-extrabold main-accent quirky-header leading-tight mb-4">
-                        <span class="bg-pink-300 p-1 -rotate-1 inline-block transform opacity-70">I translate</span>
-                        <br>DATA <span class="text-violet-500">&</span> <br>Stories
-                    </h2>
-                    <p class="text-gray-600 leading-relaxed text-xl border-l-4 border-violet-500 pl-4 italic">
-                        "Detail-oriented Computer Science student strengthening skills in **Python, data visualization, and machine learning** to drive impactful, creative data-driven solutions."
-                    </p>
-                    <a href="#projects" class="mt-6 inline-block text-white font-semibold py-3 px-6 rounded-xl transition duration-300 shadow-md bg-pink-500 hover:bg-pink-600">
-                        Check My Works!
+                <!-- Central Illustration and SVG Arrows --><div class="relative flex justify-center w-full order-first md:order-none col-span-1">
+                    <div class="relative w-full max-w-xs md:max-w-md mx-auto">
+                        <!-- SVG for all curved pink arrows (Paths are relative to this container) --><svg class="absolute inset-0 w-full h-full -z-10" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+                            
+                            <!-- Arrow 01 (Connects to Top Left) --><path d="M35 45 Q 20 25, 5 35" class="arrow-path" stroke-dasharray="100" stroke-dashoffset="0">
+                                <!-- Arrowhead at the end of the path (simulated with a short line) --><polyline points="5,35 1,40 10,40" class="arrow-path" stroke-width="2" fill="#f472b6"/>
+                            </path>
+
+                            <!-- Arrow 03 (Connects to Top Right) --><path d="M65 45 Q 80 25, 95 35" class="arrow-path" stroke-dasharray="100" stroke-dashoffset="0">
+                                <polyline points="95,35 99,40 90,40" class="arrow-path" stroke-width="2" fill="#f472b6"/>
+                            </path>
+
+                            <!-- Arrow 02 (Connects to Bottom Center) --><path d="M50 70 Q 60 85, 45 95" class="arrow-path" stroke-dasharray="100" stroke-dashoffset="0">
+                                <polyline points="45,95 40,99 40,90" class="arrow-path" stroke-width="2" fill="#f472b6"/>
+                            </path>
+
+                        </svg>
+
+                        <!-- Professional Data Processing SVG (The new central image) --><div class="doodle-float w-full h-auto pt-[100%]">
+                            <div class="absolute inset-0 flex flex-col justify-center items-center">
+                                
+                                <!-- Background Shape (Pink Circle with Strong Black Border) --><div class="absolute inset-4 bg-pink-200 rounded-full transform rotate-2 scale-105 -z-10 border-4 border-gray-800"></div>
+                                
+                                <!-- Simplified Professional Data Illustration --><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="w-3/4 h-3/4 transform -rotate-1">
+                                    <style>
+                                        .data-stroke { stroke: #374151; stroke-width: 3; fill: none; stroke-linecap: round; }
+                                        .data-fill-node { fill: #f472b6; stroke: #374151; stroke-width: 3; }
+                                        .data-fill-output { fill: #fef08a; stroke: #374151; stroke-width: 3; } /* KEEP YELLOW HERE */
+                                    </style>
+
+                                    <!-- Main Input/Raw Data (Top Left) --><rect x="10" y="10" width="20" height="15" class="data-fill-output" rx="3"/>
+                                    <text x="13" y="20" font-size="8" class="handwritten" fill="#374151">RAW</text>
+
+                                    <!-- Processing Unit (Center Square) --><rect x="35" y="35" width="30" height="30" class="data-fill-node" rx="5"/>
+                                    <text x="38" y="55" font-size="10" class="handwritten" fill="#fffefc">PROCESS</text>
+
+                                    <!-- Output/Insight (Bottom Right) --><rect x="70" y="75" width="20" height="15" class="data-fill-output" rx="3"/>
+                                    <text x="73" y="85" font-size="8" class="handwritten" fill="#374151">INSIGHT</text>
+                                    
+                                    <!-- Flow Line 1: Input to Process --><path d="M30 17.5 L 35 17.5 L 35 35" class="data-stroke"/>
+
+                                    <!-- Flow Line 2: Process to Output --><path d="M65 50 L 70 50 L 70 82.5" class="data-stroke"/>
+                                </svg>
+                                
+                                <!-- Professional Title --><span class="text-3xl font-extrabold structural-accent mt-4 quirky-header">SIYA LALWANI</span>
+                                <span class="text-lg text-gray-600 handwritten leading-none mt-1">Creative Data Analyst</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Point 3 (Top Right) --><div class="md:text-left">
+                    <div class="anatomy-point">
+                        <span class="anatomy-number">03.</span>
+                        <div class="anatomy-text">
+                            <p class="font-semibold text-gray-900">The Idea Alchemist</p>
+                            <p class="text-sm">I blend creative design theory (Figma, HTML) with analytical logic to build beautiful, **useful digital experiences** that just *work*.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Point 2 (Bottom Center - full width for mobile) --><div class="mt-8 md:mt-4 col-span-3 flex justify-center w-full">
+                <div class="max-w-md mx-auto text-center">
+                    <div class="anatomy-point justify-center">
+                        <span class="anatomy-number">02.</span>
+                        <div class="anatomy-text">
+                            <p class="font-semibold text-gray-900">The Visual Translator</p>
+                            <p class="text-sm">I treat data as a messy first draft, cleaning it up and **illustrating the plot twists** (EDA, visualization) into clear, vibrant stories.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action Buttons --><div class="mt-12 max-w-lg mx-auto text-center">
+                <div class="space-x-4">
+                    <a href="#projects" class="inline-block text-white font-semibold py-3 px-6 rounded-xl transition duration-300 shadow-md bg-pink-500 hover:bg-pink-600">
+                        Explore My Work
+                    </a>
+                    <a href="#contact" class="inline-block structural-accent font-semibold py-3 px-6 rounded-xl transition duration-300 border-2 border-gray-500 hover:bg-gray-100">
+                        Get in Touch
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Technical Skills (Quirky Outlined Boxes) -->
-        <section id="skills" class="mt-16">
-            <h2 class="text-5xl font-extrabold mb-12 text-center text-gray-800 quirky-header">
-                My Creative <span class="bg-violet-300 px-2 rounded-lg -rotate-2 inline-block opacity-70">Toolkit</span>
+        <!-- Technical Skills (Quirky Outlined Boxes) --><section id="skills" class="mt-16">
+            <h2 class="text-5xl font-extrabold mb-12 text-center quirky-header structural-accent">
+                My Creative <span class="bg-yellow-200 px-2 rounded-lg -rotate-2 inline-block opacity-70">Toolkit</span>
             </h2>
             
             <div class="grid md:grid-cols-3 gap-6">
                 
-                <!-- Skill Card 1: Programming & ML (Violet) -->
-                <div class="bg-white illustrated-card p-6 md:p-8 border-violet-500">
-                    <div class="flex items-center space-x-3 mb-4 border-b-2 pb-2 border-violet-300">
-                        <!-- Doodle: Neural Network/Brain -->
-                        <svg class="w-10 h-10" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                <!-- Skill Card 1: Programming & ML --><div class="bg-white illustrated-card p-6 md:p-8 border-pink-500">
+                    <div class="flex items-center space-x-3 mb-4 border-b-2 pb-2 border-pink-500">
+                        <!-- Doodle: Neural Network/Brain (Pink Accent) --><svg class="w-10 h-10" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="15" cy="10" r="4" fill="#f472b6"/>
                             <circle cx="15" cy="40" r="4" fill="#f472b6"/>
                             <circle cx="35" cy="25" r="4" fill="#f472b6"/>
-                            <line x1="15" y1="10" x2="35" y2="25" class="doodle-primary" stroke="#8b5cf6"/>
-                            <line x1="15" y1="40" x2="35" y2="25" class="doodle-primary" stroke="#8b5cf6"/>
-                            <text x="5" y="5" font-size="8" class="handwritten" fill="#8b5cf6">BRAIN</text>
+                            <line x1="15" y1="10" x2="35" y2="25" class="doodle-stroke" stroke="#f472b6"/>
+                            <line x1="15" y1="40" x2="35" y2="25" class="doodle-stroke" stroke="#f472b6"/>
+                            <text x="5" y="5" font-size="8" class="handwritten" fill="#f472b6">ML</text>
                         </svg>
-                        <h3 class="text-2xl font-bold quirky-header text-violet-700">ML Core</h3>
+                        <h3 class="text-2xl font-bold quirky-header main-accent">ML Core</h3>
                     </div>
                     <ul class="text-gray-600 space-y-2 text-lg mt-4">
                         <li>**Python** (Pandas, Scikit-learn)</li>
@@ -173,18 +255,15 @@
                     </ul>
                 </div>
 
-                <!-- Skill Card 2: Visualization & Frameworks (Violet) -->
-                <div class="bg-white illustrated-card p-6 md:p-8 border-violet-500">
-                    <div class="flex items-center space-x-3 mb-4 border-b-2 pb-2 border-violet-300">
-                        <!-- Doodle: Bar Chart/Graph -->
-                        <svg class="w-10 h-10" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
-                            <line x1="5" y1="45" x2="45" y2="45" class="doodle-primary" stroke="#8b5cf6"/>
-                            <rect x="10" y="25" width="8" height="20" fill="#ddd6fe"/> <!-- Light Violet Fill -->
-                            <rect x="25" y="15" width="8" height="30" fill="#ddd6fe"/>
-                            <rect x="40" y="35" width="8" height="10" fill="#ddd6fe"/>
-                            <text x="10" y="10" font-size="8" class="handwritten" fill="#8b5cf6">CHART</text>
+                <!-- Skill Card 2: Visualization & Frameworks --><div class="bg-white illustrated-card p-6 md:p-8 border-pink-500">
+                    <div class="flex items-center space-x-3 mb-4 border-b-2 pb-2 border-pink-500">
+                        <!-- Doodle: Bar Chart/Graph (Pink Accent) --><svg class="w-10 h-10" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="5" y1="45" x2="45" y2="45" class="doodle-stroke" stroke="#f472b6"/>
+                            <rect x="10" y="25" width="8" height="20" fill="#fce7f6"/> <!-- Light Pink Fill --><rect x="25" y="15" width="8" height="30" fill="#fce7f6"/>
+                            <rect x="40" y="35" width="8" height="10" fill="#fce7f6"/>
+                            <text x="10" y="10" font-size="8" class="handwritten" fill="#f472b6">CHART</text>
                         </svg>
-                        <h3 class="text-2xl font-bold quirky-header text-violet-700">Data & Viz</h3>
+                        <h3 class="text-2xl font-bold quirky-header main-accent">Data & Viz</h3>
                     </div>
                     <ul class="text-gray-600 space-y-2 text-lg mt-4">
                         <li>**Visualization:** Matplotlib, Seaborn</li>
@@ -193,17 +272,14 @@
                     </ul>
                 </div>
 
-                <!-- Skill Card 3: Web & Design (Violet) -->
-                <div class="bg-white illustrated-card p-6 md:p-8 border-violet-500">
-                    <div class="flex items-center space-x-3 mb-4 border-b-2 pb-2 border-violet-300">
-                        <!-- Doodle: Code Bracket/Figma -->
-                        <svg class="w-10 h-10" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
-                            <polyline points="10 10 5 25 10 40" class="doodle-primary" stroke="#8b5cf6" stroke-width="3"/>
-                            <polyline points="40 10 45 25 40 40" class="doodle-primary" stroke="#8b5cf6" stroke-width="3"/>
-                            <circle cx="25" cy="25" r="10" fill="#fef08a" stroke="#8b5cf6" stroke-width="3"/> <!-- Keeping light yellow fill for Figma pop -->
-                            <text x="15" y="10" font-size="8" class="handwritten" fill="#8b5cf6">FIGMA</text>
+                <!-- Skill Card 3: Web & Design --><div class="bg-white illustrated-card p-6 md:p-8 border-pink-500">
+                    <div class="flex items-center space-x-3 mb-4 border-b-2 pb-2 border-pink-500">
+                        <!-- Doodle: Code Bracket/Figma (Pink Accent) --><svg class="w-10 h-10" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <polyline points="10 10 5 25 10 40" class="doodle-stroke" stroke="#f472b6" stroke-width="3"/>
+                            <polyline points="40 10 45 25 40 40" class="doodle-stroke" stroke="#f472b6" stroke-width="3"/>
+                            <circle cx="25" cy="25" r="10" fill="#f472b6" stroke="#f472b6" stroke-width="3"/> <!-- Pink Fill --><text x="15" y="10" font-size="8" class="handwritten" fill="#f472b6">FIGMA</text>
                         </svg>
-                        <h3 class="text-2xl font-bold quirky-header text-violet-700">Web & Design</h3>
+                        <h3 class="text-2xl font-bold quirky-header main-accent">Web & Design</h3>
                     </div>
                     <ul class="text-gray-600 space-y-2 text-lg mt-4">
                         <li>**Frontend:** HTML, CSS, JavaScript</li>
@@ -214,23 +290,20 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="mt-16">
-            <h2 class="text-5xl font-extrabold mb-12 text-center text-gray-800 quirky-header">
+        <!-- Projects Section --><section id="projects" class="mt-16">
+            <h2 class="text-5xl font-extrabold mb-12 text-center quirky-header structural-accent">
                 My <span class="text-pink-500">Impactful</span> Projects
             </h2>
 
             <div class="space-y-8">
                 
-                <!-- Project 1: Movie Recommendation System (Pink Accent) -->
-                <div class="bg-white illustrated-card p-6 md:p-8 flex flex-col md:flex-row gap-6 border-pink-500">
+                <!-- Project 1: Movie Recommendation System (PINK border/YELLOW ICON/YELLOW tags) --><div class="bg-white illustrated-card p-6 md:p-8 flex flex-col md:flex-row gap-6 border-pink-500">
                     <div class="flex-shrink-0 w-full md:w-1/3 p-4 bg-pink-50 rounded-lg border-2 border-pink-300">
                          <h3 class="text-3xl font-bold mb-2 text-pink-600 quirky-header">Movie Reco System</h3>
                          <p class="text-xs text-gray-500 mb-4">COLLABORATIVE FILTERING</p>
-                         <!-- Doodle Icon: Star/Rating -->
-                        <svg class="w-20 h-20 text-pink-500 mx-auto" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" class="doodle-primary" stroke="#f472b6" stroke-width="2" fill="#fce7f6"/>
-                            <circle cx="12" cy="12" r="2" fill="#f472b6"/>
+                         <!-- Doodle Icon: Star/Rating (YELLOW) --><svg class="w-20 h-20 text-yellow-500 mx-auto" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" class="doodle-line-accent" stroke="#374151" stroke-width="2" fill="#fef08a"/>
+                            <circle cx="12" cy="12" r="2" fill="#fef08a"/>
                         </svg>
                     </div>
                     <div class="md:w-2/3">
@@ -238,23 +311,21 @@
                             Built a **collaborative filtering** recommendation system that predicts user ratings and suggests movies. This involved extensive **data preprocessing** and **similarity calculations** using core Python libraries, leading to visually evaluated results.
                         </p>
                         <div class="mt-4 space-x-2">
-                            <span class="inline-block bg-pink-200 text-pink-700 text-sm font-medium px-3 py-1 rounded-full">Python</span>
-                            <span class="inline-block bg-pink-200 text-pink-700 text-sm font-medium px-3 py-1 rounded-full">Scikit-learn</span>
-                            <span class="inline-block bg-pink-200 text-pink-700 text-sm font-medium px-3 py-1 rounded-full">Visualization</span>
+                            <!-- YELLOW TAGS --><span class="project-tag-yellow">Python</span>
+                            <span class="project-tag-yellow">Scikit-learn</span>
+                            <span class="project-tag-yellow">Collaborative Filtering</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2: Global Population Analysis 2024 (Violet Accent) -->
-                <div class="bg-white illustrated-card p-6 md:p-8 flex flex-col md:flex-row gap-6 border-violet-500">
-                    <div class="flex-shrink-0 w-full md:w-1/3 p-4 bg-violet-50 rounded-lg border-2 border-violet-300">
-                        <h3 class="text-3xl font-bold mb-2 text-violet-600 quirky-header">Population Trends</h3>
+                <!-- Project 2: Global Population Analysis 2024 (PINK border/YELLOW ICON/PINK tags) --><div class="bg-white illustrated-card p-6 md:p-8 flex flex-col md:flex-row gap-6 border-pink-500">
+                    <div class="flex-shrink-0 w-full md:w-1/3 p-4 bg-pink-50 rounded-lg border-2 border-pink-300">
+                        <h3 class="text-3xl font-bold mb-2 text-pink-600 quirky-header">Population Trends</h3>
                         <p class="text-xs text-gray-500 mb-4">EXPLORATORY DATA ANALYSIS</p>
-                        <!-- Doodle Icon: Globe/World -->
-                        <svg class="w-20 h-20 text-violet-500 mx-auto" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12" cy="12" r="10" class="doodle-primary" stroke="#8b5cf6" stroke-width="2" fill="#ddd6fe"/>
-                            <path d="M12 2a15 15 0 010 20" class="doodle-primary" stroke="#8b5cf6" stroke-width="2"/>
-                            <path d="M2.5 12h19" class="doodle-primary" stroke="#8b5cf6" stroke-width="2"/>
+                        <!-- Doodle Icon: Globe/World (Dark Gray/Yellow) --><svg class="w-20 h-20 text-yellow-500 mx-auto" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" class="doodle-stroke" stroke="#374151" stroke-width="2" fill="#fef08a"/>
+                            <path d="M12 2a15 15 0 010 20" class="doodle-stroke" stroke="#374151" stroke-width="2"/>
+                            <path d="M2.5 12h19" class="doodle-stroke" stroke="#374151" stroke-width="2"/>
                         </svg>
                     </div>
                     <div class="md:w-2/3">
@@ -262,24 +333,22 @@
                             Executed a comprehensive **Exploratory Data Analysis (EDA)** to study global population trends and demographic patterns. Key findings were visually represented using **Matplotlib and Seaborn**, effectively highlighting regional growth and future projections.
                         </p>
                         <div class="mt-4 space-x-2">
-                            <span class="inline-block bg-violet-200 text-violet-700 text-sm font-medium px-3 py-1 rounded-full">EDA</span>
-                            <span class="inline-block bg-violet-200 text-violet-700 text-sm font-medium px-3 py-1 rounded-full">Matplotlib/Seaborn</span>
-                            <span class="inline-block bg-violet-200 text-violet-700 text-sm font-medium px-3 py-1 rounded-full">Statistics</span>
+                             <!-- PINK TAGS --><span class="project-tag-pink">EDA</span>
+                            <span class="project-tag-pink">Matplotlib/Seaborn</span>
+                            <span class="project-tag-pink">Statistics</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 3: Apple Stock Analysis (Violet Accent) -->
-                <div class="bg-white illustrated-card p-6 md:p-8 flex flex-col md:flex-row gap-6 border-violet-500">
-                    <div class="flex-shrink-0 w-full md:w-1/3 p-4 bg-violet-50 rounded-lg border-2 border-violet-300">
-                        <h3 class="text-3xl font-bold mb-2 text-violet-600 quirky-header">Stock Analysis</h3>
+                <!-- Project 3: Apple Stock Analysis (PINK border/YELLOW ICON/YELLOW tags) --><div class="bg-white illustrated-card p-6 md:p-8 flex flex-col md:flex-row gap-6 border-pink-500">
+                     <div class="flex-shrink-0 w-full md:w-1/3 p-4 bg-pink-50 rounded-lg border-2 border-pink-300">
+                        <h3 class="text-3xl font-bold mb-2 text-pink-600 quirky-header">Stock Analysis</h3>
                         <p class="text-xs text-gray-500 mb-4">TIME SERIES FORECASTING</p>
-                        <!-- Doodle Icon: Candlestick Chart -->
-                        <svg class="w-20 h-20 text-violet-500 mx-auto" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="5" y="10" width="4" height="8" fill="#ddd6fe" stroke="#8b5cf6" stroke-width="2"/>
-                            <line x1="7" y1="5" x2="7" y2="10" class="doodle-primary" stroke="#8b5cf6" stroke-width="2"/>
-                            <rect x="15" y="5" width="4" height="12" fill="#ddd6fe" stroke="#8b5cf6" stroke-width="2"/>
-                            <line x1="17" y1="17" x2="17" y2="22" class="doodle-primary" stroke="#8b5cf6" stroke-width="2"/>
+                        <!-- Doodle Icon: Candlestick Chart (YELLOW) --><svg class="w-20 h-20 text-yellow-500 mx-auto" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="5" y="10" width="4" height="8" fill="#fef08a" stroke="#374151" stroke-width="2"/>
+                            <line x1="7" y1="5" x2="7" y2="10" class="doodle-stroke" stroke="#374151" stroke-width="2"/>
+                            <rect x="15" y="5" width="4" height="12" fill="#fef08a" stroke="#374151" stroke-width="2"/>
+                            <line x1="17" y1="17" x2="17" y2="22" class="doodle-stroke" stroke="#374151" stroke-width="2"/>
                         </svg>
                     </div>
                     <div class="md:w-2/3">
@@ -287,9 +356,9 @@
                             Conducted time series analysis to identify stock trends and forecast future prices. Implemented **moving averages, trend lines, and pattern analysis** using Python, Pandas, and NumPy for robust, data-backed market insights.
                         </p>
                         <div class="mt-4 space-x-2">
-                            <span class="inline-block bg-violet-200 text-violet-700 text-sm font-medium px-3 py-1 rounded-full">Time Series</span>
-                            <span class="inline-block bg-violet-200 text-violet-700 text-sm font-medium px-3 py-1 rounded-full">Pandas/NumPy</span>
-                            <span class="inline-block bg-violet-200 text-violet-700 text-sm font-medium px-3 py-1 rounded-full">Forecasting</span>
+                            <!-- YELLOW TAGS --><span class="project-tag-yellow">Time Series</span>
+                            <span class="project-tag-yellow">Pandas/NumPy</span>
+                            <span class="project-tag-yellow">Forecasting</span>
                         </div>
                     </div>
                 </div>
@@ -297,33 +366,30 @@
             </div>
         </section>
 
-        <!-- Education and Experience (Structured, Outlined Boxes) -->
-        <section id="experience" class="mt-16">
-            <h2 class="text-5xl font-extrabold mb-12 text-center text-gray-800 quirky-header">
-                Journey <span class="text-violet-500">Log</span>
+        <!-- Education and Experience (Structured, Outlined Boxes) --><section id="experience" class="mt-16">
+            <h2 class="text-5xl font-extrabold mb-12 text-center quirky-header structural-accent">
+                Journey <span class="main-accent">Log</span>
             </h2>
             <div class="grid md:grid-cols-2 gap-8">
                 
-                <!-- Education (Violet Accent) -->
-                <div class="bg-white illustrated-card p-8 border-violet-500">
-                    <h3 class="text-3xl font-bold mb-4 border-b-4 pb-2 border-violet-500 quirky-header text-violet-700">Education</h3>
+                <!-- Education (Structural Gray/Pink Shadow Only) --><div class="bg-white illustrated-card p-8 border-gray-500">
+                    <h3 class="text-3xl font-bold mb-4 border-b-4 pb-2 border-gray-500 quirky-header structural-accent">Education</h3>
                     <div class="space-y-6">
-                        <div class="p-4 bg-violet-50 rounded-lg border border-violet-300">
+                        <!-- Removed yellow background on inner cards --><div class="p-4 bg-white rounded-lg border border-gray-300"> 
                             <p class="font-bold text-xl">Integrated MSc Computer Science</p>
                             <p class="text-sm text-gray-700 italic">Gujarat University | Aug 2023 - July 2028</p>
                         </div>
-                        <div class="p-4 bg-violet-50 rounded-lg border border-violet-300">
+                        <div class="p-4 bg-white rounded-lg border border-gray-300">
                             <p class="font-bold text-xl">Higher Secondary School Certificate</p>
                             <p class="text-sm text-gray-700 italic">Airport School Ahmedabad | 90.4%</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Experience (Violet Accent) -->
-                <div class="bg-white illustrated-card p-8 border-violet-500">
-                    <h3 class="text-3xl font-bold mb-4 border-b-4 pb-2 border-violet-500 quirky-header text-violet-700">Experience</h3>
+                <!-- Experience (Structural Gray/Pink Shadow Only) --><div class="bg-white illustrated-card p-8 border-gray-500">
+                    <h3 class="text-3xl font-bold mb-4 border-b-4 pb-2 border-gray-500 quirky-header structural-accent">Experience</h3>
                     <div class="space-y-6">
-                        <div class="p-4 bg-violet-50 rounded-lg border border-violet-300">
+                        <!-- Removed yellow background on inner cards --><div class="p-4 bg-white rounded-lg border border-gray-300">
                             <p class="font-bold text-xl">Content and Digital Media Intern</p>
                             <p class="text-sm text-gray-700 italic mb-2">Gujarat Student Startup and Innovation hub (i-Hub) | Oct 2024 - Dec 2024</p>
                             <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
@@ -336,13 +402,12 @@
             </div>
         </section>
 
-        <!-- Footer / Contact (Quirky Call to Action) -->
-        <footer id="contact" class="mt-16 pt-8 pb-12 text-center bg-white illustrated-card p-12 border-pink-500">
+        <!-- Footer / Contact (Quirky Call to Action) --><footer id="contact" class="mt-16 pt-8 pb-12 text-center bg-white illustrated-card p-12 border-pink-500">
             <h2 class="text-5xl font-extrabold mb-4 text-gray-800 quirky-header">
-                Ready to <span class="bg-pink-300 px-2 rounded-lg -rotate-1 inline-block opacity-70">Collaborate?</span>
+                Let's Make <span class="bg-pink-300 px-2 rounded-lg -rotate-1 inline-block opacity-70">Something Super Useful!</span>
             </h2>
             <p class="text-gray-600 mb-8 max-w-2xl mx-auto text-xl">
-                I'm always open to new projects that push the boundaries of data science and creative problem-solving. Let's make something quirky and impactful!
+                I'm always open to new projects that push the boundaries of data science and creative problem-solving. Let's collaborate.
             </p>
 
             <div class="flex justify-center space-x-8 text-xl">
